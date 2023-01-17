@@ -11,6 +11,8 @@ npm test
 ```
 
 # Particle Chamber 
+
+## Spec
 We are writing a simulation of a particle chamber where individual particles are leaving the chamber at a constant speed. You must implement this method
 
 function animate(initialPosition: string, speed: number): string[]; 
@@ -54,3 +56,10 @@ See examples below:
 //    These particles are moving so fast that they all exit the chamber by
 
 //    step 1.
+
+## Running
+
+```sh
+cd ./particle-chamber
+npm test
+```
