@@ -30,14 +30,43 @@ function convertStateToOutput(state: IParticleState[], tunnelLength: number) {
     return filledTunnel.join("")
 }
 
+function runSimulationStep(state: IParticleState[], speed: number, tunnelSize: number) {
+    return state.reduce<IParticleState[]>((result, particle) => {
+        let {direction, position} = particle
+        switch (direction) {
+            case Direction.Left:
+                position -= speed
+                break;
+            case Direction.Right:
+                position += speed
+                break;
+            default:
+                throw new Error("A particle is breaking physics")
+        }
+        if (position >= 0 && position < tunnelSize) {
+            return [
+                ...result,
+                { ...particle, position }
+            ]
+        }
+        
+        return [ ...result ]
+    }, [])
+}
+
 export function runSimulation(speed: number, startingConfiguration: string) {
     const startOrDefault = startingConfiguration ?? ""
     const speedOrDefault = speed ?? 1
     const tunnelSize = startOrDefault.length
-    const result = []
 
-    const state = initializeParticleState(startOrDefault)
-    result.push(convertStateToOutput(state, tunnelSize))
+    const initialState = initializeParticleState(startOrDefault)
+    const result = [convertStateToOutput(initialState, tunnelSize)]
+
+    let state = initialState
+    while(state.length) {
+        state = runSimulationStep(state, speedOrDefault, tunnelSize)
+        result.push(convertStateToOutput(state, tunnelSize))
+    }
 
     return result
 }
