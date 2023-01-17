@@ -17,6 +17,24 @@ const tddTestData = [
         ]
     },
     {
+        name: "0 speed === 1 - no infinite loops",
+        startingConfiguration: "R",
+        speed: 0,
+        expected: [
+            "X",
+            "."
+        ]
+    },
+    {
+        name: "invalid characters are '.'",
+        startingConfiguration: "abcd7*RxX",
+        speed: 10,
+        expected: [
+            "......X..",
+            "........."
+        ]
+    },
+    {
         name: "empty startingConfiguration",
         startingConfiguration: "",
         speed: 1,
