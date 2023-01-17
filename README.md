@@ -7,6 +7,7 @@ Given a string of English letters, write a function that returns all the letters
 
 ```sh
 cd ./unused-letters
+npm install
 npm test
 ```
 
@@ -65,5 +66,6 @@ proves that the 4 scenarios above work as described.
 
 ```sh
 cd ./particle-chamber
+npm install
 npm test
 ```
