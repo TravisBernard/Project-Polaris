@@ -1,5 +1,14 @@
 # Unused letters
-Given a string of English letters, write a function that returns all the letters of the alphabet that are unused. For example the string “A slow yellow fox crawls under the proactive dog" would return "bjkmqz" since none of those letters are used. The string “A quick brown fox jumps over the lazy dog”  would return “” since all of the English letters are in that sentence. 
+
+## Spec
+Given a string of English letters, write a function that returns all the letters of the alphabet that are unused. For example the string “A slow yellow fox crawls under the proactive dog" would return "bjkmqz" since none of those letters are used. The string “A quick brown fox jumps over the lazy dog”  would return “” since all of the English letters are in that sentence.
+
+## Running
+
+```sh
+cd ./unused-letters
+npm test
+```
 
 # Particle Chamber 
 We are writing a simulation of a particle chamber where individual particles are leaving the chamber at a constant speed. You must implement this method
