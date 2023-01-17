@@ -59,6 +59,10 @@ See examples below:
 
 ## Running
 
+Note that this will run 2 test suites.  First is "TDD test" which just prove individual
+aspects of the particle chamber in isolation.  Second is "Assessment Scenarios" which 
+proves that the 4 scenarios above work as described.
+
 ```sh
 cd ./particle-chamber
 npm test

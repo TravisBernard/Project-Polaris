@@ -1,3 +1,3 @@
-export function main() {
-    return
+export function runSimulation(speed: number, startingConfiguration: string) {
+    return ["....."]
 }
